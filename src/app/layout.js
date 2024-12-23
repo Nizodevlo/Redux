@@ -1,3 +1,4 @@
+// app/layout.js
 import Navigation from "@/components/navigation";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -24,15 +25,13 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased mx-[50px]`}
       >
-
         <header className="flex justify-center mt-10">
           <Navigation />
         </header>
-
+        {/* Ensure StoreProvider wraps the application */}
         <StoreProvider>
           <main className="w-full h-[80vh] flex justify-center mt-10 mb-10">
             {children}
-            
           </main>
         </StoreProvider>
       </body>
